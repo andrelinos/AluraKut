@@ -21,6 +21,7 @@ export function CardUser({ children, image }: CardUserProps) {
       bgPos="center"
       bgRepeat="no-repeat"
       cursor="pointer"
+      justify="center"
     >
       <Text
         fontSize="xs"
@@ -29,6 +30,10 @@ export function CardUser({ children, image }: CardUserProps) {
         pos="absolute"
         bottom="1"
         px="0.125rem"
+        whiteSpace="nowrap"
+        width="4.5rem"
+        overflow="hidden"
+        textOverflow="ellipsis"
       >
         {children}
       </Text>

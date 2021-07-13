@@ -7,6 +7,7 @@ import {
   Image,
   Grid,
   Link,
+  useColorMode,
 } from '@chakra-ui/react';
 
 import { CardUser } from '../components/CardUser';
@@ -15,19 +16,26 @@ import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import Header from '../components/Header';
 
 export default function Home() {
+  const { colorMode } = useColorMode();
+
   return (
     <>
       <Head>
         <title>Alurakut</title>
       </Head>
 
-      <Flex w="100vw" h="100vh" flexDir="column" bg="blue.100">
+      <Flex
+        w="100vw"
+        h="100%"
+        flexDir="column"
+        bg={colorMode === 'dark' ? 'gray.900' : 'blue.100'}
+      >
         <Header />
 
         <Flex p="1rem" w="100%" maxW="1100px" mx="auto" flexDir={['column', 'column', 'row']}>
           <Flex
             w="10rem"
-            bg="white"
+            bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}
             borderRadius="0.5rem"
             display={['none',
               'none',
@@ -39,13 +47,35 @@ export default function Home() {
             </Flex>
 
           </Flex>
-          <Flex flex="1" bg="white" borderRadius="0.5rem" p="1rem" mx="1rem">
+          <Flex
+            flex="1"
+            bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}
+            borderRadius="0.5rem"
+            p="1rem"
+            mx={['0rem', '0rem', '1rem']}
+            mb="1rem"
+          >
             <Text fontSize="3xl" fontWeight="500">Bem-vindo(a), Andrelino</Text>
           </Flex>
-          <Flex w="19.5rem" flexDir="column">
-            <Flex p="0.5rem" bg="white" borderRadius="0.5rem" flexDir="column" mb="1rem">
+
+          <Flex w={['100%', '100%', '19.5rem']} flexDir="column">
+            <Flex
+              p="0.5rem"
+              bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}
+              borderRadius="0.5rem"
+              flexDir="column"
+              mb="1rem"
+            >
               <Text fontSize="lg" mb="1rem">Meus amigos (6)</Text>
-              <Grid templateColumns="repeat(3, 1fr)" gap={2}>
+              <Grid
+                templateColumns={[
+                  'repeat(3, 1fr)',
+                  'repeat(6, 1fr)',
+                  'repeat(3, 1fr)',
+                ]}
+                align="center"
+                gap={2}
+              >
                 <Link to="https://alurakut-base-2.vercel.app/users/juunegreiros">
                   <CardUser image="https://github.com/juunegreiros.png">
                     <Text>Juu Negreiros</Text>
@@ -85,7 +115,13 @@ export default function Home() {
               </Grid>
 
             </Flex>
-            <Flex p="0.5rem" bg="white" borderRadius="0.5rem" flexDir="column" mb="1rem">
+            <Flex
+              p="0.5rem"
+              bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}
+              borderRadius="0.5rem"
+              flexDir="column"
+              mb="1rem"
+            >
               <Text mb="1rem" fontSize="lg">Minhas comunidades (6)</Text>
             </Flex>
           </Flex>

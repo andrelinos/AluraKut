@@ -5,6 +5,7 @@ import {
 } from '@chakra-ui/react';
 import { FaSearch } from 'react-icons/fa';
 import MenuNav from '../NavMenu';
+import AlurakutMenu from './Menu';
 
 export default function Header() {
   const { colorMode } = useColorMode();
@@ -26,16 +27,24 @@ export default function Header() {
         display={['none', 'none', 'flex']}
       >
         <Flex align="center">
-          <Flex mr="2rem" justify="flex-start" align="center" p="3" borderRadius="1.625rem" bg="white">
-            <Image w="8rem" src="/assets/logo.svg" />
+          <Flex
+            mr="2rem"
+            justify="flex-start"
+            align="center"
+            py="0.7rem"
+            px="1.5rem"
+            borderRadius="1.625rem"
+            bg="white"
+          >
+            <Image w="6rem" src="/assets/logo.svg" />
           </Flex>
           <MenuNav isActive>Início</MenuNav>
           <MenuNav>Perfil</MenuNav>
-          <MenuNav>Páginas de recados</MenuNav>
+          <MenuNav>Recados</MenuNav>
           <MenuNav>Amigos</MenuNav>
           <MenuNav>Comunidades</MenuNav>
         </Flex>
-
+        <AlurakutMenu />
         <Flex h="100%" align="center">
           <Text
             color={colorMode === 'dark' ? 'gray.100' : 'gray.100'}
