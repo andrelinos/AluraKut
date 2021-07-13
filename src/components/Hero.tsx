@@ -1,4 +1,4 @@
-import { Flex, Heading } from '@chakra-ui/react'
+import { Flex, Heading } from '@chakra-ui/react';
 
 export const Hero = ({ title }: { title: string }) => (
   <Flex
@@ -10,8 +10,9 @@ export const Hero = ({ title }: { title: string }) => (
   >
     <Heading fontSize="6vw">{title}</Heading>
   </Flex>
-)
+);
 
 Hero.defaultProps = {
+  // eslint-disable-next-line react/default-props-match-prop-types
   title: 'with-chakra-ui-typescript',
-}
+};
