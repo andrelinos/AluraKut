@@ -13,7 +13,7 @@ import {
 import { CardUser } from '../components/CardUser';
 
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
-import Header from '../components/Header';
+import { Header } from '../components/Header';
 
 export default function Home() {
   const { colorMode } = useColorMode();
@@ -26,7 +26,7 @@ export default function Home() {
 
       <Flex
         w="100vw"
-        h="100%"
+        h="100vh"
         flexDir="column"
         bg={colorMode === 'dark' ? 'gray.900' : 'blue.100'}
       >
