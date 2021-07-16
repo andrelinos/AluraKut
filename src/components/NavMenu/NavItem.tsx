@@ -1,16 +1,18 @@
 import NextLink from 'next/link';
-import { Flex, useColorMode, Image } from '@chakra-ui/react';
+import {
+  Flex, useColorMode, Image, FlexProps,
+} from '@chakra-ui/react';
 
 type NavItemProps = {
-  children: any;
-  image: any;
-  url: string;
+  children: FlexProps | string;
+  image?: any;
+  url?: string;
   hover?: string;
-  color?: string;
+  color?: string[] | string;
 }
 
 export function NavItem({
-  url, children, hover, color, image, ...rest
+  url, children, hover, color, image,
 }: NavItemProps) {
   const { colorMode } = useColorMode();
 
@@ -23,9 +25,9 @@ export function NavItem({
         fontWeight="normal"
         mr="1rem"
         flexDir="row"
-        color={colorMode === 'dark' ? 'gray.50' : 'gray.100'}
+        color={color ?? colorMode === 'dark' ? 'gray.50' : 'blue.900'}
         _hover={{
-          color: colorMode === 'dark' ? 'gray.300' : 'gray.300',
+          opacity: 0.8,
         }}
       >
         {children}

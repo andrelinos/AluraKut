@@ -2,6 +2,7 @@ import {
   Flex, Text, Box, Button, UnorderedList, ListItem, Input, InputGroup, InputLeftAddon,
   Icon, InputLeftElement, useColorMode, Image,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 type CardUserProps = {
   children: any;
@@ -10,6 +11,7 @@ type CardUserProps = {
 export function CardUser({ children, image }: CardUserProps) {
   return (
     <Flex
+      as="a"
       pos="relative"
       borderRadius="0.5rem"
       w="5rem"
@@ -38,5 +40,6 @@ export function CardUser({ children, image }: CardUserProps) {
         {children}
       </Text>
     </Flex>
+
   );
 }

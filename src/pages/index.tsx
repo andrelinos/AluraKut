@@ -14,6 +14,7 @@ import { CardUser } from '../components/CardUser';
 
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { Header } from '../components/Header';
+import SibebarUser from '../components/SideBarUser';
 
 export default function Home() {
   const { colorMode } = useColorMode();
@@ -32,21 +33,10 @@ export default function Home() {
       >
         <Header />
 
-        <Flex p="1rem" w="100%" maxW="1100px" mx="auto" flexDir={['column', 'column', 'row']}>
-          <Flex
-            w="10rem"
-            bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}
-            borderRadius="0.5rem"
-            display={['none',
-              'none',
-              'flex']}
-            flexDir="column"
-          >
-            <Flex h="10rem" p="1rem" borderRadius="0.5rem">
-              <Image borderRadius="0.5rem" src="https://github.com/andrelinos.png" />
-            </Flex>
+        <Flex p="1rem" w="100%" maxW="1240px" mx="auto" flexDir={['column', 'column', 'row']}>
 
-          </Flex>
+          <SibebarUser />
+
           <Flex
             flex="1"
             bg={colorMode === 'dark' ? 'gray.700' : 'gray.50'}

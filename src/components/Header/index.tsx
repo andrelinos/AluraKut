@@ -18,8 +18,7 @@ import { GoPrimitiveDot } from 'react-icons/go';
 import { HiLightBulb } from 'react-icons/hi';
 import { FaSearch } from 'react-icons/fa';
 
-import { NavItem } from './NavItem';
-import { NavItemMob } from './NavItemMob';
+import { NavItem } from '../NavMenu/NavItem';
 
 export function Header() {
   const { colorMode } = useColorMode();
@@ -61,11 +60,11 @@ export function Header() {
               justify="flex-start"
               align="center"
             >
-              <NavItem url="/">Início</NavItem>
-              <NavItem url="/profile">Perfil</NavItem>
-              <NavItem url="/messages">Recados</NavItem>
-              <NavItem url="/friends">Amigos</NavItem>
-              <NavItem url="/communities">Comunidades</NavItem>
+              <NavItem color="red" url="/">Início</NavItem>
+              <Box cursor="pointer" mr="1rem" color="gray.50" url="/profile">Perfil</Box>
+              <Box cursor="pointer" mr="1rem" color="gray.50" url="/messages">Recados</Box>
+              <Box cursor="pointer" mr="1rem" color="gray.50" url="/friends">Amigos</Box>
+              <Box cursor="pointer" color="gray.50" url="/communities">Comunidades</Box>
             </Flex>
           </Flex>
           <Flex h="100%" align="center" display={['none', 'none', 'flex']}>
@@ -150,18 +149,22 @@ export function Header() {
         <Flex flexDir="column" align="left" justify="center">
           <Flex justify="center">
             <Image
-              w="8rem"
-              h="8rem"
+              w="10rem"
+              h="10rem"
               mb="1rem"
+              bg="blue.900"
+              p="0.313rem"
               borderRadius="50%"
               src="https://github.com/andrelinos.png"
             />
           </Flex>
 
           <Flex
-            w="25rem"
+            w="100%"
+            maxW="25rem"
             mt="1rem"
             mx="auto"
+            px="1rem"
             flexDir="column"
             justify="flex-start"
             align="left"
@@ -169,30 +172,30 @@ export function Header() {
 
           >
             <hr />
-            <NavItemMob color="red" url="/">@</NavItemMob>
+            <NavItem url="/"><Text fontSize="1rem" color="gray.500">@andrelinossilva</Text></NavItem>
             <hr />
-            <NavItemMob color="red" url="/">
+            <NavItem url="/">
               <Flex><Image mr="0.5rem" src="/assets/home.svg" alt="Home" /> Início</Flex>
-            </NavItemMob>
-            <NavItemMob color="green" url="/profile">
+            </NavItem>
+            <NavItem url="/profile">
               <Flex><Image mr="0.5rem" src="/assets/user.svg" alt="User" /> Perfil</Flex>
-            </NavItemMob>
-            <NavItemMob url="/messages">
+            </NavItem>
+            <NavItem url="/messages">
               <Flex><Image mr="0.5rem" src="/assets/book.svg" alt="Messages" /> Recados</Flex>
-            </NavItemMob>
-            <NavItemMob url="/photos">
+            </NavItem>
+            <NavItem url="/photos">
               <Flex><Image mr="0.5rem" src="/assets/camera.svg" alt="Photos" /> Fotos</Flex>
-            </NavItemMob>
-            <NavItemMob url="/testimonial">
+            </NavItem>
+            <NavItem url="/testimonial">
               <Flex><Image mr="0.5rem" src="/assets/sun.svg" alt="Testimonial" /> Depoimentos</Flex>
-            </NavItemMob>
+            </NavItem>
             <hr />
-            <NavItemMob url="/github">
+            <NavItem url="/github">
               <Flex><Image mr="0.5rem" src="/assets/plus.svg" alt="Github Trends" />Github Trends</Flex>
-            </NavItemMob>
-            <NavItemMob url="/logout">
+            </NavItem>
+            <NavItem url="/logout">
               <Flex><Image mr="0.5rem" src="/assets/logout.svg" alt="Logout" />Sair</Flex>
-            </NavItemMob>
+            </NavItem>
 
           </Flex>
         </Flex>
